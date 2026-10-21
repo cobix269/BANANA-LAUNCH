@@ -99,7 +99,6 @@ Exemple : stock = 0, received = 18 et resolved = 17 ne signifie pas que la parti
 - L'écran commence en `(0,0)` en haut à gauche. x augmente vers la droite ; y augmente vers le bas. `constrain()` empêche une position de dépasser ses limites.
 - `if` teste une condition ; `return` quitte la fonction actuelle ; `for` répète un traitement.
 - `bool` vaut vrai/faux ; `int` contient un entier ; `float` autorise les décimales ; `uint8_t` représente un octet ; `unsigned long` sert ici aux temps.
-- `=` affecte une valeur ; `==` compare ; `&&` signifie « et » ; `||` signifie « ou » ; `!` signifie « non ».
 - `score++` ajoute 1 ; `stock--` retire 1 ; `b.y += b.speed` ajoute la vitesse à y.
 - `for (auto &b : bananas)` parcourt toutes les bananes. Le `&` permet de modifier la vraie banane du tableau ; sans lui, on modifierait une copie.
 - `special ? SUPER_SPEED : NORMAL_SPEED` choisit la vitesse super si special est vrai, sinon la vitesse normale.
