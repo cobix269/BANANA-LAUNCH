@@ -11,15 +11,14 @@ Dans ce jeu il y a deux joueurs : l’émetteur et le récepteur. L’émetteur 
 
 Composants : 
 Le schéma électrique et les composantes sont disponibles sur le Github à l’adresse suivante IFT_S3
-Composantes principales, XIAO ESP32S3, boutons, écran 
+
 
 Structure globale du code : 
 
 Communication : 
 La communication se fait par I2C avec le TX et le RX de nos ESP32S3. Ils sont reliés avec des câbles. 
 Deux programmes Arduino commentés : le **lanceur**, puis le **rattrapeur**.
-Ce document est destiné à être lu sur GitHub et peut servir de `README.md`.
-**Ne pas copier les deux codes dans un seul sketch** : chacun possède son propre `setup()` et son propre `loop()` et doit être téléversé sur sa carte.
+
 
 ## Matériel et branchements
 
@@ -36,19 +35,15 @@ Sur chacune des deux cartes : XIAO ESP32-S3, OLED SSD1306 I2C 128 × 64 et clavi
 | Liaison carte 2 → carte 1 | D2 → D0 |
 | Masse commune | GND ↔ GND |
 
-Respecter les niveaux logiques 3,3 V des XIAO. Alimenter l'OLED selon les indications de son module.
-Matrice conservée : droite = D8/D1, A = D8/D6, B = D10/D6, gauche = D10/D7.
-Les autres intersections ne sont pas utilisées par le jeu. Le câblage d'origine utilise des diodes ; les appuis multiples dépendent de ce câblage.
 
 ## Installation
 
 Dans Arduino IDE, sélectionner **XIAO_ESP32S3** du paquet de cartes **esp32**.
-Installer **Adafruit SSD1306** et **Adafruit GFX Library**, ainsi que leurs dépendances proposées.
-Le scan du clavier est écrit dans les sketches : la bibliothèque Keypad n'est pas utilisée.
+Installer **Adafruit SSD1306** et **Adafruit GFX Library**.
 
 ## Messages échangés
 
-Les messages sont des **octets binaires**, pas du texte comme « F1 ».
+Les messages sont des **octets binaires**
 
 | Message | Sens | Données après l'en-tête |
 | --- | --- | --- |
@@ -60,7 +55,6 @@ Les messages sont des **octets binaires**, pas du texte comme « F1 ».
 Les données sont inférieures à `0xF0`, réservé au repérage des en-têtes. Modifier ce format exige de modifier les deux programmes ensemble.
 La liaison actuelle ne comporte ni accusé de réception, ni contrôle d'intégrité, ni renvoi automatique : un message perdu peut désynchroniser la partie.
 
-Comprendre et dépanner
 
 ### Le trajet d'une banane
 
