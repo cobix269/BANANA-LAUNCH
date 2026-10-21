@@ -1,5 +1,5 @@
  
-BANANA LAUNCH
+## BANANA LAUNCH
 
 Résumé : Implémentation d’un jeu à 2 joueurs sur des XIAO esp32S3 et communication I2C. 
 
